@@ -1,5 +1,5 @@
 version: 0.0
 os: linux
 files:
-  - source: \shadi\wedding.html
-    destination: \var\www\html
+  - source: .\wedding.html\
+    destination: \var\www\html\
