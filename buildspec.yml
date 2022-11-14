@@ -15,14 +15,14 @@ env:
     - variable
   secrets-manager:
     key: secret-id:json-key:version-stage:version-id
-  git-credential-helper: no | yes
+  git-credential-helper: yes
 
 proxy:
-  upload-artifacts: no | yes
-  logs: no | yes
+  upload-artifacts:  yes
+  logs:  yes
 
 batch:
-  fast-fail: false | true
+  fast-fail: false 
   # build-list:
   # build-matrix:
   # build-graph:
@@ -42,7 +42,7 @@ phases:
       - command
   pre_build:
     run-as: Linux-user-name
-    on-failure: ABORT | CONTINUE
+    on-failure:  CONTINUE
     commands:
       - command
       - command
@@ -73,17 +73,17 @@ reports:
       - location
       - location
     base-directory: location
-    discard-paths: no | yes
+    discard-paths: no 
     file-format: report-format
 artifacts:
   files:
     - location
     - location
   name: artifact-name
-  discard-paths: no | yes
+  discard-paths: no 
   base-directory: location
   exclude-paths: excluded paths
-  enable-symlinks: no | yes
+  enable-symlinks: no 
   s3-prefix: prefix
   secondary-artifacts:
     artifactIdentifier:
@@ -91,13 +91,13 @@ artifacts:
         - location
         - location
       name: secondary-artifact-name
-      discard-paths: no | yes
+      discard-paths: no 
       base-directory: location
     artifactIdentifier:
       files:
         - location
         - location
-      discard-paths: no | yes
+      discard-paths: no 
       base-directory: location
 cache:
   paths:
