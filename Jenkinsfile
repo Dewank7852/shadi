@@ -3,24 +3,24 @@ pipeline {
     stages {
         stage('git repo & clean') {
             steps {
-               //bat "rmdir  /s /q TicketBookingServiceJunitTesting"
+               //bat "rmdir  /s /q shadi"
                 bat "git clone https://github.com/Dewank7852/shadi.git"
-                bat "mvn clean -f TicketBookingServiceJunitTesting"
+                bat "mvn clean -f shadi"
             }
         }
         stage('install') {
             steps {
-                bat "mvn install -f TicketBookingServiceJunitTesting"
+                bat "mvn install -f shadi"
             }
         }
         stage('test') {
             steps {
-                bat "mvn test -f TicketBookingServiceJunitTesting"
+                bat "mvn test -f shadi"
             }
         }
         stage('package') {
             steps {
-                bat "mvn package -f TicketBookingServiceJunitTesting"
+                bat "mvn package -f shadi"
             }
         }
     }
