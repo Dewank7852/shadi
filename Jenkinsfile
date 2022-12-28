@@ -4,7 +4,7 @@ pipeline {
         stage('git repo & clean') {
             steps {
                 //sh "rmdir  /s /q shadi"
-                sh "git clone https://github.com/Dewank7852/shadi.git"
+                //sh "git clone https://github.com/Dewank7852/shadi.git"
                 sh "mvn clean -f shadi"
             }
         }
